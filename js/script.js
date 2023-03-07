@@ -6,10 +6,10 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 Bonus:
 Gestire l'inserimento dei numeri tramite 5 input diversi.
 
--creare pulsante play
--creare elem tasto conferma
--creare variabili per salvare input
--creare variabile score = 0;
+-creare pulsante play--------------------ok
+-creare elem tasto conferma---------------ok
+-creare variabili per salvare input-----------ok
+-creare variabile score = 0;-----------------ok
 
 al click di play:
     -reset display
@@ -28,3 +28,12 @@ al click di play:
 
 
 */
+
+const btnPlayEl = document.getElementById("btn-play");
+const btnConfermaEl = document.getElementById("btn-conferma");
+let input1El = document.getElementById("input1");
+let input2El = document.getElementById("input2");
+let input3El = document.getElementById("input3");
+let input4El = document.getElementById("input4");
+let input5El = document.getElementById("input5");
+let score = 0;
