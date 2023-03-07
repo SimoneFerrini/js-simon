@@ -23,7 +23,7 @@
 }
 #random-number-container{
     display: flex;
-    
+
 }
 
 #user-inputs{
@@ -38,6 +38,10 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+#random-number-container.d-none{
+    display: none;
 }
 
 #user-inputs.d-none{

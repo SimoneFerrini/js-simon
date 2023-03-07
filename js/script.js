@@ -22,7 +22,7 @@ al click di play:
     -assegnare i valori input a var
     -SE input [i] == arrayRandom[i]
         -score++;
-        -arrayGiusto.push input[i]
+        -arrayGiusti.push input[i]
     -ALTRIMENTI
         -arrayGiusti.push(X);
     -mostrare a schermo score e arrayGiusti
@@ -39,10 +39,16 @@ let input3El = document.getElementById("input3");
 let input4El = document.getElementById("input4");
 let input5El = document.getElementById("input5");
 let score = 0;
+let arrayRandom = [];
+
 
 btnPlayEl.addEventListener("click", function(){
+    arrayRandom = [];
     randomContainerEl.innerHTML = "";
-    let arrayRandom = [];
+    randomContainerEl.classList.remove("d-none");
+    document.getElementById("user-inputs").classList.add("d-none");
+
+    
     while(arrayRandom.length < 5){
         let random = randomNumberBetween(1,20);
         if(!arrayRandom.includes(random)){
@@ -52,9 +58,55 @@ btnPlayEl.addEventListener("click", function(){
                
     }
 
-    
+    setTimeout(disappear, 10000);
+    setTimeout(inputDisplay, 10000);
+
+
 
 })
+
+btnConfermaEl.addEventListener("click", function(){
+    score=0;
+    let arrayGiusti = [];
+    if(input1El.value == arrayRandom[0]){
+        score++;
+        arrayGiusti.push(input1El.value);
+    } else {
+        arrayGiusti.push("X");
+    }
+
+    if(input2El.value == arrayRandom[1]){
+        score++;
+        arrayGiusti.push(input2El.value);
+    } else {
+        arrayGiusti.push("X");
+    }
+
+    if(input3El.value == arrayRandom[2]){
+        score++;
+        arrayGiusti.push(input3El.value);
+    } else {
+        arrayGiusti.push("X");
+    }
+
+    if(input4El.value == arrayRandom[3]){
+        score++;
+        arrayGiusti.push(input4El.value);
+    } else {
+        arrayGiusti.push("X");
+    }
+
+    if(input5El.value == arrayRandom[4]){
+        score++;
+        arrayGiusti.push(input5El.value);
+    } else {
+        arrayGiusti.push("X");
+    }
+
+    document.getElementById("result").innerHTML = "Il risultato è "+ score + ", i numeri che hai indovinato sono: "+arrayGiusti+".";
+})
+
+/*funzioni-----------------------------------------------------------*/
 
 function createCell(num){
 
@@ -69,3 +121,12 @@ function randomNumberBetween(min, max){
     let random = Math.floor(Math.random() * (max - min +1)) + min;
     return random;
 }
+
+function disappear(){
+    randomContainerEl.classList.add("d-none");
+}
+
+function inputDisplay(){
+    document.getElementById("user-inputs").classList.remove("d-none");
+}
+
