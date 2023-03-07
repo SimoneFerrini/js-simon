@@ -21,6 +21,10 @@
     padding: 5px 15px;
     border: 1px solid black;
 }
+#random-number-container{
+    display: flex;
+    
+}
 
 #user-inputs{
     display: flex;
@@ -46,4 +50,5 @@
     justify-content: center;
     width: 50px;
     height: 50px;
+    border: 1px solid black;
 }
